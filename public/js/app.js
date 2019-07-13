@@ -8,7 +8,7 @@ const msg2 = document.querySelector('#message-2');
 form.addEventListener('submit', (e) => {
 
   msg2.textContent = 'Loading...'
-  fetch(`http://localhost:3000/weather?location=${search.value}`).then((response) => {
+  fetch(`/weather?location=${search.value}`).then((response) => {
     response.json().then((data) => {
       if(data.error){
         msg2.textContent = data.error;
