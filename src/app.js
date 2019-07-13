@@ -23,14 +23,15 @@ app.use(express.static(publicDirPath))
 
 app.get('/', (req, res) => {
   res.render('index', {
-    name : 'Naman'
+    name : 'Naman',
+    title : 'Weather'
   });
 });
 
 app.get('/weather', (req, res) => {
   if(!req.query.location){
     return res.send({
-      error : 'You must provide qs'
+      error : 'You must provide Location'
     })
   }
   geocode(req.query.location, (error, response) => {
@@ -58,14 +59,16 @@ app.get('/weather', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    name : 'Naman'
+    name : 'Naman',
+    title : 'About'
   });
 });
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    helpText : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta asperiores velit reiciendis libero magni sequi consequatur unde repudiandae iure assumenda veritatis nostrum cumque doloribus ut, quis impedit non expedita.',
-    name : 'Naman'
+    helpText : 'Just your Plain Help Page',
+    name : 'Naman',
+    title : 'Help'
   });
 });
 
