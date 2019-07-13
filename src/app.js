@@ -50,7 +50,7 @@ app.get('/weather', (req, res) => {
             Weather_Report : response
            });
          }
-      })
+      });
     }
   });
 });
